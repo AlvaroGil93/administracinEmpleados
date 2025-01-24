@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'; // Usa 'import' en lugar de 'require'
+import mongoose from 'mongoose';
 
 const EmpleadoSchema = new mongoose.Schema({
   codigo: { type: Number, required: true, unique: true },
