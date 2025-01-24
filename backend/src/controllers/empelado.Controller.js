@@ -3,7 +3,7 @@ import empleado from "../models/empleado.js";
 // Obtener todos los empleados
 export const getEmpleados = async (req, res) => {
   try {
-    const empleadosList = await empleado.find(); // Obtiene todos los empleados
+    const empleadosList = await empleado.find(); 
     res.status(200).json(empleadosList);
   } catch (error) {
     res.status(500).json({ message: 'Error al obtener empleados', error: error.message });
@@ -15,7 +15,7 @@ export const getEmpleados = async (req, res) => {
 export const getEmpleadoByCodigo = async (req, res) => {
   try {
     const { codigo } = req.params;
-    const empleadoEncontrado = await empleado.findOne({ codigo: codigo }); // Buscar por el campo `codigo`
+    const empleadoEncontrado = await empleado.findOne({ codigo: codigo }); 
 
     if (!empleadoEncontrado) {
       return res.status(404).json({ message: 'Empleado con ese código no encontrado' });
@@ -39,7 +39,7 @@ export const postCreate = async (req, res) => {
         // Enviar mensaje de error con el estado 400 (Solicitud incorrecta)
         res.status(400).json({
             message: "Error al crear empleado",
-            error: error.message, // Incluye el mensaje de error para facilitar depuración
+            error: error.message, 
         });
     }
 };
@@ -49,18 +49,18 @@ export const postCreate = async (req, res) => {
 // Controlador para actualizar un empleado
 export const updateEmpleado = async (req, res) => {
   try {
-    const { codigo } = req.params;  // Obtiene el código del empleado de la URL
+    const { codigo } = req.params;  
     const updatedEmpleado = await empleado.findOneAndUpdate(
-      { codigo: codigo },  // Condición para encontrar al empleado
-      req.body,  // Datos nuevos a actualizar
-      { new: true }  // Devuelve el documento actualizado
+      { codigo: codigo },  
+      req.body,  
+      { new: true }  
     );
 
     if (!updatedEmpleado) {
       return res.status(404).json({ message: 'Empleado no encontrado' });
     }
 
-    res.status(200).json(updatedEmpleado);  // Retorna el empleado actualizado
+    res.status(200).json(updatedEmpleado); 
   } catch (error) {
     res.status(500).json({ message: 'Error al actualizar el empleado', error: error.message });
   }
@@ -71,9 +71,9 @@ export const updateEmpleado = async (req, res) => {
 export const deleteEmpleadoByCodigo = async (req, res) => {
   try {
     const { codigo } = req.params;
-    const deletedEmpleado = await empleado.findOneAndDelete({ codigo: codigo }); // Asegúrate de usar un objeto con la condición de búsqueda
+    const deletedEmpleado = await empleado.findOneAndDelete({ codigo: codigo }); 
 
-    if (!deletedEmpleado) {  // Debes verificar "deletedEmpleado" y no "deleteEmpleadoByCodigo"
+    if (!deletedEmpleado) {  
       return res.status(404).json({ message: 'Empleado no encontrado' });
     }
 
