@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+/*import mongoose from "mongoose";
 
 const DepartamentoSchema = new mongoose.Schema({
   nombre_departamento: { type: String, required: true },
@@ -6,3 +6,4 @@ const DepartamentoSchema = new mongoose.Schema({
 });
 
 export default mongoose.model("Departamento", DepartamentoSchema);
+*/

@@ -1,4 +1,4 @@
-import Departamento from "../models/departamento.js";
+/*import Departamento from "../models/departamento.js";
 
 // Obtener departamentos
 export const getDepartamento = async (req, res) => {
@@ -19,3 +19,4 @@ export const postDepartamento = async (req, res) => {
     res.status(400).json({ message: 'Error al crear el departamento', error: error.message });
   }
 };
+*/

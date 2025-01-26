@@ -1,0 +1,72 @@
+
+/* Contenedor general */
+
+.container {
+  max-width: 500px;
+  margin: 70px auto 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Estilo de las etiquetas */
+label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+/* Estilo de los campos de entrada */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Estilo del botón */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Cambia el color del botón al pasar el pulsor */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el botón deshabilitado */
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Agregar un estilo al mensaje de error (si lo hay) */
+.invalid-feedback {
+  color: #e74a3b;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+/* Espaciado adicional para los campos de form */
+.form-row {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,56 @@
+<div class="container">
+  <form [formGroup]="formEmpleado" (ngSubmit)="handleSubmit()">
+    <!-- Código -->
+    <div class="form-group row">
+      <label for="codigo" class="col-sm-2 col-form-label">Código</label>
+      <div class="col-sm-10">
+        <input id="codigo" type="number" class="form-control" formControlName="codigo" />
+      </div>
+    </div>
+
+    <!-- Nombre -->
+    <div class="form-group row">
+      <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+      <div class="col-sm-10">
+        <input id="nombre" type="text" class="form-control" formControlName="nombre" />
+      </div>
+    </div>
+
+    <!-- Primer Apellido -->
+    <div class="form-group row">
+      <label for="apellido1" class="col-sm-2 col-form-label">Primer Apellido</label>
+      <div class="col-sm-10">
+        <input id="apellido1" type="text" class="form-control" formControlName="apellido1" />
+      </div>
+    </div>
+
+    <!-- Segundo Apellido -->
+    <div class="form-group row">
+      <label for="apellido2" class="col-sm-2 col-form-label">Segundo Apellido</label>
+      <div class="col-sm-10">
+        <input id="apellido2" type="text" class="form-control" formControlName="apellido2" />
+      </div>
+    </div>
+
+    <!-- Nombre Departamento -->
+    <div class="form-group row">
+      <label for="nombre_departamento" class="col-sm-2 col-form-label">Nombre Departamento</label>
+      <div class="col-sm-10">
+        <input id="nombre_departamento" type="text" class="form-control" formControlName="nombre_departamento" />
+      </div>
+    </div>
+
+    <!-- Código Departamento -->
+    <div class="form-group row">
+      <label for="codigo_departamento" class="col-sm-2 col-form-label">Código Departamento</label>
+      <div class="col-sm-10">
+        <input id="codigo_departamento" type="number" class="form-control" formControlName="codigo_departamento" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="formEmpleado.invalid">Agregar empleado</button>
+  </form>
+</div>
+<div class="container">
+  <button class="btn btn-secondary mt-3" routerLink="/">Ir a Inicio</button>
+</div>

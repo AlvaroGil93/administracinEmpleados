@@ -1,0 +1,77 @@
+<body>
+    <h1>Lista de Empleados  y Departamentos</h1>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Primer Apellido</th>
+          <th>Segundo Apellido</th>
+          <th>Departamento</th>
+          <th>Código Departamento</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleado of allEmpleados; let i = index">
+          <td>{{ empleado.codigo }}</td>
+          <td>{{ empleado.nombre }}</td>
+          <td>{{ empleado.apellido1 }}</td>
+          <td>{{ empleado.apellido2 }}</td>
+          <td>{{ empleado.nombre_departamento }}</td>
+          <td>{{ empleado.codigo_departamento }}</td>
+          <td>
+            <button (click)="editarEmpleado(empleado)" class="edit-btn">Editar</button>
+          </td>
+          <td>
+            <button (click)="eliminarEmpleado(empleado.codigo)" class="delete-btn">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Botón para regresar al inicio -->
+    <button class="btn btn-secondary mt-3" routerLink="/">Ir a Inicio</button>
+    
+    <!-- Modal para editar empleado -->
+    <div *ngIf="selectedEmpleado" class="modal" tabindex="-1" role="dialog" style="display: block;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Empleado</h5>
+            <button type="button" class="close" (click)="cerrarModal()">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="guardarCambios()">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="selectedEmpleado.nombre" name="nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="apellido1">Primer Apellido</label>
+                <input type="text" class="form-control" id="apellido1" [(ngModel)]="selectedEmpleado.apellido1" name="apellido1" required>
+              </div>
+              <div class="form-group">
+                <label for="apellido2">Segundo Apellido</label>
+                <input type="text" class="form-control" id="apellido2" [(ngModel)]="selectedEmpleado.apellido2" name="apellido2">
+              </div>
+              <div class="form-group">
+                <label for="departamento">Departamento</label>
+                <input type="text" class="form-control" id="departamento" [(ngModel)]="selectedEmpleado.nombre_departamento" name="departamento" required>
+              </div>
+              <div class="form-group">
+                <label for="codigo_departamento">Código Departamento</label>
+                <input type="number" class="form-control" id="codigo_departamento" [(ngModel)]="selectedEmpleado.codigo_departamento" name="codigo_departamento" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
